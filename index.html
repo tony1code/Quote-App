@@ -1,34 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cool Quote App</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <!-- Google Font for a modern look -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <h6>Note No Internet No Quotes <br> <b>all u will see the one's by me.</b></h6>
-      <h1>✨Quote App by TONY-PIO✨</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuoteSpark by Tonypio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+  <!-- Background overlay -->
+  <div class="background-image"></div>
 
-      <!-- QUOTE DISPLAY BOX -->
-      <div class="quote-box">
-        <p id="quote">Click the button to get a quote!</p>
-        <h4 id="author"></h4>
-      </div>
+  <header>
+    <h1>✨ QuoteSpark by <span class="highlight">Tonypio</span></h1>
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="themeSwitch">
+        <span class="slider">
+          <span class="icon">🌞</span>
+        </span>
+      </label>
+    </div>
+  </header>
 
-      <!-- BUTTONS -->
-      <div class="btn-group">
-        <button onclick="generateQuote()">🎲 New Quote</button>
-        <button onclick="tweetQuote()">🐦 Tweet Quote</button>
+  <!-- Quote of the Day Banner -->
+  <section class="quote-of-day">
+    <p>🌟 <span id="quoteOfDay">Loading Quote of the Day...</span></p>
+  </section>
+
+  <main>
+    <div class="quote-card">
+      <p id="quote">Loading quote...</p>
+      <p id="author"></p>
+      <div class="buttons">
+        <button id="saveQuoteBtn">❤️ Save</button>
+        <div class="share-dropdown">
+          <button class="share-btn">📤 Share ▼</button>
+          <div class="share-options">
+            <a href="#" id="shareWhatsApp">WhatsApp</a>
+            <a href="#" id="shareTwitter">Twitter</a>
+            <a href="#" id="shareFacebook">Facebook</a>
+            <a href="#" id="shareTelegram">Telegram</a>
+          </div>
+        </div>
       </div>
     </div>
 
-    <script src="./js/script.js"></script>
-  </body>
+    <div class="saved-section">
+      <button id="viewSavedBtn">📜 View Saved Quotes</button>
+    </div>
+  </main>
+
+  <!-- Floating Button for new quotes -->
+  <button id="newQuoteBtn" class="fab">🔄</button>
+
+  <!-- Saved Quotes Modal -->
+  <div id="savedModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Saved Quotes</h2>
+      <ul id="savedQuotesList"></ul>
+    </div>
+  </div>
+
+  <footer>
+    <p class="ad-placeholder">[ AD SPACE ]</p>
+    <p class="footer-text">© 2025 QuoteSpark by Tonypio</p>
+  </footer>
+
+  <script src="./JS/script.js"></script>
+</body>
 </html>

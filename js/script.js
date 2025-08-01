@@ -1,186 +1,144 @@
-// 📝 My Own Quotes
-// const myQuotes = [
-//   { text: "Stay true to yourself and never give up.", author: "Tony-Pio" },
-//   { text: "Learning every day keeps the mind young.", author: "Tony-Pio" },
-//   { text: "Code, create, inspire.", author: "Tony-Pio" },
-//   { text: "Dream big, work hard, stay humble.", author: "Tony-Pio" },
-//   { text: "Sometime's, in order to write about life first, you most live it.", author: "Tony-Pio"},
-//   { text: "The doorstep to the temple of wisdom is the knowledge of our own ignorance.", author: "TYSON MANDELA"},
-//   { text: "We only live once, but if we live well, once is enough.", author: "Baron"},
-//   { text: "Never interrupt your enemy when he's making a mistake.", author: "Went-Wort Millar"},
-//   { text: "There are no regrets in life, just lessons.", author: "Tony-Pio"}
-// ];
-
-// // 🎨 Background colors
-// const colors = [
-//   "#222", "#1abc9c", "#3498db", "#9b59b6",
-//   "#e67e22", "#e74c3c", "#2ecc71", "#34495e", "#f39c12"
-// ];
-// async function generateQuote() {
-//   // 🎯 90% API, 10% your quotes
-//   const useApi = Math.random() < 0.9;
-
-//   if (useApi) {
-//     console.log("🔵 Fetching from ZenQuotes via corsproxy.io...");
-//     try {
-//       // ✅ Use corsproxy.io + timestamp to avoid caching
-//       const response = await fetch(
-//         "https://corsproxy.io/?" + encodeURIComponent("https://zenquotes.io/api/random?nocache=" + new Date().getTime())
-//       );
-
-//       if (!response.ok) throw new Error("❌ Proxy/API response not ok");
-
-//       // 🔥 corsproxy.io already gives us JSON, so just read it
-//       const data = await response.json();
-//       console.log("✅ API Quote Fetched:", data);
-
-//       // ✅ ZenQuotes API returns: [{ q: "Quote text", a: "Author" }]
-//       fadeQuote(data[0].q, data[0].a);
-//     } catch (error) {
-//       console.log("🚨 API Fetch Error:", error);
-//       showFallbackQuote();
-//     }
-//   } else {
-//     console.log("🟠 Showing your own quote");
-//     showFallbackQuote();
-//   }
-
-//   // 🎨 Change background color
-//   const randomColor = colors[Math.floor(Math.random() * colors.length)];
-//   document.body.style.background = randomColor;
-// }
-
-
-// // ✨ Helper for fade animation
-// function fadeQuote(quote, author) {
-//   const quoteText = document.getElementById("quote");
-//   const authorText = document.getElementById("author");
-
-//   // Fade out
-//   quoteText.style.opacity = 0;
-//   authorText.style.opacity = 0;
-
-//   setTimeout(() => {
-//     // Update text
-//     quoteText.innerText = quote;
-//     authorText.innerText = author ? "- " + author : "";
-
-//     // Fade in
-//     quoteText.style.opacity = 1;
-//     authorText.style.opacity = 1;
-//   }, 300);
-// }
-
-// // 🔄 Show one of your quotes if API is not used or fails
-// function showFallbackQuote() {
-//   const randomIndex = Math.floor(Math.random() * myQuotes.length);
-//   const selectedQuote = myQuotes[randomIndex];
-//   fadeQuote(selectedQuote.text, selectedQuote.author);
-// }
-
-// // 🐦 Tweet the current quote
-// function tweetQuote() {
-//   const quote = document.getElementById("quote").innerText;
-//   const author = document.getElementById("author").innerText;
-//   const tweetText = `${quote} ${author}`;
-//   const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
-//   window.open(tweetUrl, "_blank");
-// }
-
-
-
-
-// 📝 My Quotes 
 const myQuotes = [
- { text: "Stay true to yourself and never give up.", author: "Tony Pio" },
- { text: "Learning every day keeps the mind young.", author: "Tony Pio" },
- { text: "We only live once, but if we live well, once is enough.", author: "Baron"},
- { text: "Dream big, work hard, stay humble.", author: "Tony Pio" },
- { text: "In order to write about life first, you most live it.", author: "Tony Pio"},
- { text: "The doorstep to the temple of wisdom is the knowledge of our own ignorance.", author: "TYSON MANDELA"},
- { text: "Never interrupt your enemy when he's making a mistake.", author: "Went-Wort Millar"},
- { text: "In a world where you can be anything, be kind.", author: "Baron"},
- { text: "Kill the boy and let the man be born.", author: "Tony Pio"},
- { text: "Sometimes you have to know where you are, to be sure of what to do.", author: "Tony Pio"},
- { text: "EVERY PAIN GIVES A LESSON AND EVERY LESSON CHANGES A PERSON.", author: "Juicy Warld"},
- { text: "Maybe dizzin maybe it's just the beginning.", author: "Juicy Warld"},
- { text: "Be the change you want to see in the world.", author: "Went-Wort Millar"},
- { text: "We are captives of our own identities, living in prisons of our own creation.", author: "T-Bag"}
+  { text: "Stay true to yourself and never give up.", author: "Tony Pio" },
+  { text: "Learning every day keeps the mind young.", author: "Tony Pio" },
+  { text: "We only live once, but if we live well, once is enough.", author: "Baron"},
+  { text: "Dream big, work hard, stay humble.", author: "Tony Pio" },
+  { text: "In order to write about life first, you most live it.", author: "Tony Pio"},
+  { text: "The doorstep to the temple of wisdom is the knowledge of our own ignorance.", author: "TYSON MANDELA"},
+  { text: "Never interrupt your enemy when he's making a mistake.", author: "Went-Wort Millar"},
+  { text: "In a world where you can be anything, be kind.", author: "Baron"},
+  { text: "Kill the boy and let the man be born.", author: "Tony Pio"},
+  { text: "Sometimes you have to know where you are, to be sure of what to do.", author: "Tony Pio"},
+  { text: "EVERY PAIN GIVES A LESSON AND EVERY LESSON CHANGES A PERSON.", author: "Juicy Warld"},
+  { text: "Maybe dizzin maybe it's just the beginning.", author: "Juicy Warld"},
+  { text: "Be the change you want to see in the world.", author: "Went-Wort Millar"},
+  { text: "We are captives of our own identities, living in prisons of our own creation.", author: "T-Bag"}
 ];
 
-// 🎨 Background colors
-const colors = [
-  "#222", "#1abc9c", "#3498db", "#9b59b6",
-  "#e67e22", "#e74c3c", "#2ecc71", "#34495e", "#f39c12"
-];
+const quoteText = document.getElementById("quote");
+const authorText = document.getElementById("author");
+const themeSwitch = document.getElementById("themeSwitch");
+const savedQuotesList = document.getElementById("savedQuotesList");
+const quoteOfDayElement = document.getElementById("quoteOfDay");
 
-// 🎲 MAIN FUNCTION: Show quote from API or your list (50/50)
+let savedQuotes = JSON.parse(localStorage.getItem("savedQuotes")) || [];
+
+// Theme toggle
+themeSwitch.addEventListener("change", () => {
+  document.body.classList.toggle("dark");
+  document.body.classList.toggle("light");
+  localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+});
+
+// Load theme + quote of the day
+window.onload = () => {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  document.body.classList.add(savedTheme);
+  themeSwitch.checked = savedTheme === "dark";
+  generateQuote();
+  setQuoteOfDay();
+};
+
+// Fetch random quote (50% API, 50% local)
 async function generateQuote() {
-  // 🎯 50% API, 50% your quotes
   const useApi = Math.random() < 0.5;
 
   if (useApi) {
-    console.log("🔵 Fetching from ZenQuotes via corsproxy.io...");
     try {
-      // ✅ Use corsproxy.io + timestamp to stop caching
       const response = await fetch(
-        "https://corsproxy.io/?" + encodeURIComponent("https://zenquotes.io/api/random?nocache=" + new Date().getTime())
+        "https://corsproxy.io/?" +
+        encodeURIComponent("https://zenquotes.io/api/random?nocache=" + new Date().getTime())
       );
-
-      if (!response.ok) throw new Error("❌ Proxy/API response not ok");
-
-      // 🔥 corsproxy.io already sends JSON, no need for JSON.parse()
       const data = await response.json();
-      console.log("✅ API Quote Fetched:", data);
-
-      // ✅ ZenQuotes API returns: [{ q: "Quote text", a: "Author" }]
       fadeQuote(data[0].q, data[0].a);
-    } catch (error) {
-      console.log("🚨 API Fetch Error:", error);
-      showFallbackQuote();
+    } catch (err) {
+      console.log("API failed, using my quote", err);
+      showLocalQuote();
     }
   } else {
-    console.log("🟠 Showing one of your own quotes");
-    showFallbackQuote();
+    showLocalQuote();
   }
-
-  // 🎨 Change background color every click
-  const randomColor = colors[Math.floor(Math.random() * colors.length)];
-  document.body.style.background = randomColor;
 }
 
-// ✨ Fade-in / Fade-out animation for quotes
-function fadeQuote(quote, author) {
-  const quoteText = document.getElementById("quote");
-  const authorText = document.getElementById("author");
+function showLocalQuote() {
+  const random = myQuotes[Math.floor(Math.random() * myQuotes.length)];
+  fadeQuote(random.text, random.author);
+}
 
-  // Fade out
+// Fade animation
+function fadeQuote(quote, author) {
   quoteText.style.opacity = 0;
   authorText.style.opacity = 0;
-
   setTimeout(() => {
-    // Update text
     quoteText.innerText = quote;
     authorText.innerText = author ? "- " + author : "";
-
-    // Fade in
     quoteText.style.opacity = 1;
     authorText.style.opacity = 1;
   }, 300);
 }
 
-// 🔄 Show one of your personal quotes if API is not used or fails
-function showFallbackQuote() {
-  const randomIndex = Math.floor(Math.random() * myQuotes.length);
-  const selectedQuote = myQuotes[randomIndex];
-  fadeQuote(selectedQuote.text, selectedQuote.author);
+// Quote of the Day
+function setQuoteOfDay() {
+  const random = myQuotes[Math.floor(Math.random() * myQuotes.length)];
+  quoteOfDayElement.innerText = `${random.text} – ${random.author}`;
 }
 
-// 🐦 Tweet the current quote
-function tweetQuote() {
-  const quote = document.getElementById("quote").innerText;
-  const author = document.getElementById("author").innerText;
-  const tweetText = `${quote} ${author}`;
-  const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
-  window.open(tweetUrl, "_blank");
+// Save quote
+document.getElementById("saveQuoteBtn").addEventListener("click", () => {
+  const quote = quoteText.innerText;
+  const author = authorText.innerText;
+  savedQuotes.push({ quote, author });
+  localStorage.setItem("savedQuotes", JSON.stringify(savedQuotes));
+  alert("Quote saved!");
+});
+
+// Share options
+function shareQuote(platform) {
+  const quote = quoteText.innerText;
+  const author = authorText.innerText;
+  const text = `${quote} ${author}`;
+  let url = "";
+  switch(platform) {
+    case "WhatsApp":
+      url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+      break;
+    case "Twitter":
+      url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+      break;
+    case "Facebook":
+      url = `https://www.facebook.com/sharer/sharer.php?u=&quote=${encodeURIComponent(text)}`;
+      break;
+    case "Telegram":
+      url = `https://t.me/share/url?text=${encodeURIComponent(text)}`;
+      break;
+  }
+  window.open(url, "_blank");
 }
+
+document.getElementById("shareWhatsApp").onclick = () => shareQuote("WhatsApp");
+document.getElementById("shareTwitter").onclick = () => shareQuote("Twitter");
+document.getElementById("shareFacebook").onclick = () => shareQuote("Facebook");
+document.getElementById("shareTelegram").onclick = () => shareQuote("Telegram");
+
+// View saved quotes
+document.getElementById("viewSavedBtn").addEventListener("click", () => {
+  savedQuotesList.innerHTML = "";
+  if (savedQuotes.length === 0) {
+    savedQuotesList.innerHTML = "<li>No saved quotes yet</li>";
+  } else {
+    savedQuotes.forEach((q) => {
+      const li = document.createElement("li");
+      li.innerText = `${q.quote} ${q.author}`;
+      savedQuotesList.appendChild(li);
+    });
+  }
+  document.getElementById("savedModal").style.display = "block";
+});
+
+// Close modal
+document.getElementById("closeModal").addEventListener("click", () => {
+  document.getElementById("savedModal").style.display = "none";
+});
+
+// New Quote button (FAB)
+document.getElementById("newQuoteBtn").addEventListener("click", generateQuote);
